@@ -1,0 +1,18 @@
+.FC{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.L, .R{
+    width: 31.5vw;
+    height: 100vh;
+    background-color: #FFD1DC;
+}
+.M{
+    width: 37vw;
+    height: 100vh;
+}
+img{
+    object-fit: contain;
+}
