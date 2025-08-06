@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import PoomingImage from "./Pooming.png";
 
-
 function Fpage() {
   const [showMain, setShowMain] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -16,22 +15,24 @@ function Fpage() {
 
   if (showMain) {
     return (
-      <div className="main-page">
-        <h1>메인 페이지</h1>
-        <p>여기에 원하는 콘텐츠를 추가하세요!</p>
+      <div className="C2">
+        <div className="L"></div>
+        <div className="M2">
+          <img src={PoomingImage} alt="Pooming" className="second" />
+        </div>
+        <div className="R"></div>
       </div>
     );
   }
 
   return (
-    <div 
-      className={`FC ${isTransitioning ? 'transitioning' : ''}`}
+    <div
+      className={`FC ${isTransitioning ? "transitioning" : ""}`}
       onClick={handleClick}
     >
       <div className="L"></div>
       <div className="M">
-        <img src={PoomingImage} alt="Pooming" className="pooming-img" />
-         <div className="click-placeholder">Click to Continue</div>
+        <div className="click-placeholder">Click to Continue</div>
       </div>
       <div className="R"></div>
     </div>
