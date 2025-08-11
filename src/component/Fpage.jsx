@@ -5,65 +5,36 @@ import M from "./M.png";
 function Fpage() {
   const [showMain, setShowMain] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [showRegisterModal, setShowRegisterModal] = useState(false);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  // 로그인 상태 유지
+  const [log, setlog] = useState(false);
+  const [flog, setflog] = useState(false);
   useEffect(() => {
     const visited = localStorage.getItem("visited");
-    const lastEmail = localStorage.getItem("lastEmail");
     if (visited) {
       setShowMain(true);
     }
-    if (lastEmail) {
-      setEmail(lastEmail);
-    }
   }, []);
-
-  const handleLoginClick = () => {
-    setShowLoginModal(true);
-    setError("");
+  const handleClick = () => {
+    setTimeout(() => {
+      setlog(false);
+      setShowMain(true);
+      localStorage.setItem("visited", "true"); // 방문 기록 저장
+    }, 500);
   };
-
-  const handleRegisterClick = () => {
-    setShowRegisterModal(true);
-    setError("");
+  const on = () => {
+    setlog(true);
+    setflog(false)
   };
-
-  const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-    if (users[email] && users[email] === password) {
-      localStorage.setItem("visited", "true");
-      localStorage.setItem("lastEmail", email);
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setShowMain(true);
-      }, 500);
-    } else {
-      setError("아이디 또는 비밀번호가 일치하지 않습니다.");
-    }
+  const onc = () => {
+    setlog(false)
+    setflog(true);
   };
-
-  const handleRegister = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-    if (users[email]) {
-      setError("이미 존재하는 아이디입니다.");
-    } else {
-      users[email] = password;
-      localStorage.setItem("users", JSON.stringify(users));
-      localStorage.setItem("lastEmail", email);
-      localStorage.setItem("visited", "true");
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setShowMain(true);
-      }, 500);
-    }
-  };
-
+  let cnt = 0;
+  let total = 0;
+  const C = ()=>{
+    setlog(false)
+    setflog(false)
+  }
+  //조건들이 전부다 
   if (showMain) {
     return (
       <div className="C2">
@@ -71,7 +42,7 @@ function Fpage() {
         <div className="M2">
           <div className="Ma">
             <img src={PoomingImage} alt="Pooming" className="second" />
-            <img src={M} alt="market" className="MI" />
+            <img src={M} alt="market" className="MI"></img>
           </div>
         </div>
         <div className="R"></div>
@@ -83,45 +54,49 @@ function Fpage() {
     <div className={`FC ${isTransitioning ? "transitioning" : ""}`}>
       <div className="L"></div>
       <div className="M">
-        <div className="click-placeholder" onClick={handleLoginClick}>
+        <div className="login Log" onClick={on}>
           로그인하기
-        </div>
-        <div className="click-placeholder" onClick={handleRegisterClick}>
-          회원가입
         </div>
       </div>
       <div className="R"></div>
+      {log && (
+        <div className="FCON">
+          <div className="SCON">
+            <div className="title">로그인창
+                <button className="close" onClick={C}>X</button>
+            </div>
 
-      {(showLoginModal || showRegisterModal) && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>{showLoginModal ? "로그인" : "회원가입"}</h2>
-            <input
-              type="text"
-              placeholder="아이디"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="비밀번호"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={showLoginModal ? handleLogin : handleRegister}>
-              {showLoginModal ? "로그인" : "회원가입"}
-            </button>
-            {error && <p className="error">{error}</p>}
-            <button
-              className="close-btn"
-              onClick={() => {
-                setShowLoginModal(false);
-                setShowRegisterModal(false);
-                setError("");
-              }}
-            >
-              닫기
-            </button>
+            <div className="A">
+              <input type="text" placeholder="아이디"></input>
+              <input type="password" placeholder="비밀번호"></input>
+            </div>
+            <div className="return">
+              <button onClick={handleClick} className="s">
+                시작하기
+              </button>
+              <button onClick={onc} className="f">
+                회원가입
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {flog && (
+        <div className="FCON">
+          <div className="SCON">
+            <div className="title">회원가입창
+                <button className="close" onClick={C}>X</button>
+            </div>
+            <div className="AA">
+              <input type="text" placeholder="아이디"></input>
+              <input type="password" placeholder="비밀번호"></input>
+              <input type="email" placeholder="email"></input>
+            </div>
+            <div className="returnn">
+              <button onClick={handleClick} className="S">
+                시작하기
+              </button>
+            </div>
           </div>
         </div>
       )}

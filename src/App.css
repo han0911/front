@@ -29,7 +29,7 @@
 
 /* 중앙 영역 */
 .M {
-    gap: 40px;
+  gap: 40px;
   min-width: 480px;
   width: 480px;
   height: 100vh;
@@ -70,7 +70,7 @@
 
 /* 반응형 디자인 */
 
-.click-placeholder {
+.Log {
   width: 150px;
   height: 60px;
   background: #ff6b9d;
@@ -84,7 +84,7 @@
   transition: all 0.3s ease;
 }
 
-.click-placeholder:hover {
+.Log:hover {
   background: #ff5a8a;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
@@ -118,45 +118,99 @@
   height: 80px;
   object-fit: contain;
 }
-.modal {
+.FCON {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
 }
-
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
+.SCON {
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 320px;
+  height: 370px;
+  background-color: white;
+  border-radius: 30px;
 }
-
-.modal-content input {
-  display: block;
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+.title {
+  font-size: 30px;
+  margin-top: 25px;
 }
-
-.modal-content button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
+.A {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 10px;
 }
-
-.error {
-  color: red;
-  margin-top: 0.5rem;
+input {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  border-radius: 10px;
+  width: 250px;
+  height: 45px;
+  border: 1px solid #1e1e1e;
 }
-
-.close-btn {
-  margin-top: 1rem;
-  background: #ccc;
+.return {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+button {
+  width: 110px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+}
+.s {
+  border: 1px solid black;
+  background-color: white;
+  transition: all 1 ease;
+}
+.s:hover {
+  transform: translateY(-2px);
+}
+.f {
+  background-color: #d1006d;
+  color: white;
+  transition: all 1 ease;
+}
+.f:hover {
+  transform: translateY(-2px);
+}
+.AA {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+.returnn {
+  margin-top: 20px;
+}
+.S {
+  background-color: #d1006d;
+  border: none;
+  width: 150px;
+  color: white;
+  font-size: 20px;
+}
+.S:hover {
+  transform: translateY(-2px);
+}
+.close {
+  position: absolute;
+  width: 30px;
+  
+  top: 22px;
+  right: 30px;
+  background-color: white;
 }
