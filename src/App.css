@@ -175,16 +175,16 @@ button {
   background-color: white;
   transition: all 1 ease;
 }
-.s:hover {
-  transform: translateY(-2px);
+.s:hover{
+    cursor: pointer;
 }
 .f {
   background-color: #d1006d;
   color: white;
   transition: all 1 ease;
 }
-.f:hover {
-  transform: translateY(-2px);
+.f:hover{
+    cursor: pointer;
 }
 .AA {
   align-items: center;
@@ -194,7 +194,10 @@ button {
   margin-top: 30px;
 }
 .returnn {
+  display: flex;
   margin-top: 20px;
+  gap: 40px;
+  margin-left: 30px;
 }
 .S {
   background-color: #d1006d;
@@ -202,15 +205,15 @@ button {
   width: 150px;
   color: white;
   font-size: 20px;
-}
-.S:hover {
-  transform: translateY(-2px);
+  transition: 1s all ease;
 }
 .close {
   position: absolute;
   width: 30px;
-  
   top: 22px;
   right: 30px;
   background-color: white;
+}
+.close:hover{
+    cursor: pointer;
 }
