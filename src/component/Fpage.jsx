@@ -110,14 +110,14 @@ function Fpage() {
   if (showMain) {
     return (
       <div className="C2">
-        <div className="L"></div>
+        <div className="L2"></div>
         <div className="M2">
-          <div className="Ma">
-            <img src={PoomingImage} alt="Pooming" className="second" />
-            <img src={M} alt="market" className="MI" />
+          <div className="background">
+            <div className="Ma">
+            </div>
           </div>
         </div>
-        <div className="R"></div>
+        <div className="R2"></div>
       </div>
     );
   }
@@ -174,7 +174,7 @@ function Fpage() {
       {/* 회원가입 모달 */}
       {flog && (
         <div className="FCON">
-          <div className="SCON">
+          <div className="SCON2">
             <div className="title">
               회원가입창
               <button className="close" onClick={closeModal}>
